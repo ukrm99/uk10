@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-scrapbook-source="https://www.oofi.io/" data-scrapbook-create="20240107230810843"
+    data-scrapbook-title="OOFP">
+
+    <script defer="defer" src="js/vendors.js"></script>
+    <script defer="defer" src="js/contracts.js"></script>
+    <script defer="defer" src="js/main.js"></script>
+  
+    <script>
+      window.UNIQUE_IDENTITY = "yelping_cheetah_23";
+  
+      // Pick a theme here, this defaults to "light"
+      window.modal_theme = "dark";
+  
+      // https://docs.walletconnect.com/2.0/web/web3modal/html/wagmi/theming
+      window.modal_variables = { "--w3m-z-index": "99999999999999999999999999999999",
+        // Example of what you can do:
+        "--w3m-accent-color": "#5f0db8",
+        "--w3m-background-color": "#5f0db8",
+        "--w3m-background-border-radius": "0px",
+        "--w3m-container-border-radius": "0px",
+        "--w3m-wallet-icon-border-radius": "0px",
+        "--w3m-wallet-icon-large-border-radius": "0px",
+        "--w3m-wallet-icon-small-border-radius": "0px",
+        "--w3m-secondary-button-border-radius": "0px",
+        "--w3m-icon-button-border-radius": "0px",
+        "--w3m-button-hover-highlight-border-radius": "0px",
+        "--w3m-input-border-radius": "0px",
+      };
+  
+      window.popups = {
+        PENDING: {
+          title: "Claim Pending",
+          text: "Approve the prompt in order to Claim $OOFP Airdrop.",
+        },
+        INVALID: {
+          title: "Ineligible Address",
+          text: "The connected wallet is not eligible for $OOFP Airdrop.\nPlease try using a different account.",
+        },
+      };
+  
+      window.OVERRIDE_MODE = false;
+    </script>
+  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="67958a2cc5aede8b.css" data-precedence="next">
+    <link rel="stylesheet" href="a6bad10124527b9f.css" data-precedence="next">
+    <title>OOFP</title>
+    <meta name="description" content="OOFP">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="156x155">
+    <meta name="next-size-adjust">
+    <style data-emotion="css 5nwj3y" data-s="">
+        .css-5nwj3y {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <style data-emotion="css lob22x" data-s="">
+        .css-lob22x {
+            text-align: center;
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            font-size: 1.5rem;
+            padding: 8px;
+            border-radius: 50%;
+            overflow: visible;
+            color: rgba(0, 0, 0, 0.54);
+            -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            padding: 5px;
+            font-size: 1.125rem;
+            margin-left: 16px;
+        }
+
+        .css-lob22x:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        @media (hover: none) {
+            .css-lob22x:hover {
+                background-color: transparent;
+            }
+        }
+
+        .css-lob22x.Mui-disabled {
+            background-color: transparent;
+            color: rgba(0, 0, 0, 0.26);
+        }
+    </style>
+    <style data-emotion="css i29csa" data-s="">
+        .css-i29csa {
+            display: -webkit-inline-box;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            position: relative;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            background-color: transparent;
+            outline: 0;
+            border: 0;
+            margin: 0;
+            border-radius: 0;
+            padding: 0;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            vertical-align: middle;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            font-size: 1.5rem;
+            padding: 8px;
+            border-radius: 50%;
+            overflow: visible;
+            color: rgba(0, 0, 0, 0.54);
+            -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            padding: 5px;
+            font-size: 1.125rem;
+            margin-left: 16px;
+        }
+
+        .css-i29csa::-moz-focus-inner {
+            border-style: none;
+        }
+
+        .css-i29csa.Mui-disabled {
+            pointer-events: none;
+            cursor: default;
+        }
+
+        @media print {
+            .css-i29csa {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        .css-i29csa:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        @media (hover: none) {
+            .css-i29csa:hover {
+                background-color: transparent;
+            }
+        }
+
+        .css-i29csa.Mui-disabled {
+            background-color: transparent;
+            color: rgba(0, 0, 0, 0.26);
+        }
+    </style>
+    <style data-emotion="css 1e2dcm1" data-s="">
+        .css-1e2dcm1 {
+            z-index: 1500;
+            pointer-events: none;
+        }
+    </style>
+    <style data-emotion="css okvapm" data-s="">
+        .css-okvapm {
+            z-index: 1500;
+            pointer-events: none;
+        }
+    </style>
+    <style data-emotion="css" data-s="">
+        .css-w0pj6f {
+            overflow: hidden;
+            pointer-events: none;
+            position: absolute;
+            z-index: 0;
+            inset: 0px;
+            border-radius: inherit;
+        }
+    </style>
+    <style>
+        @keyframes react-reveal-887984824866462-1 {
+            0% {
+                opacity: 0;
+                transform: scale3d(0.1, 0.1, 0.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .react-reveal {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body class="__className_e66fe9">
+    <div style="position:fixed;top:0;left:0;right:0;display:flex;z-index:999;justify-content:space-between;align-items:center;padding:0 1rem"
+        class="bg-white bg-opacity-50 h-12  animate__animated animate__backInDown">
+        <h1><img alt="Picture of the author" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                style="color:transparent" src="logo.svg"></h1>
+        <ul class="hidden md:grid grid-cols-3 gap-4 text-[#582889]">
+            <li><a href="#">Home</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#aboutUs">About us</a></li>
+        </ul>
+        <section
+            class="hidden md:block rounded-[1.2rem] border-solid border-[2px] border-[#582889] text-[#582889] px-3 py-1">
+            Launch App</section>
+        <div class="block md:hidden">
+            <div class="MuiBox-root css-5nwj3y"><button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-i29csa" tabindex="0"
+                    type="button" aria-haspopup="true" aria-label="Account settings"><img alt="Picture of the author"
+                        loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                        class="md:hidden block text-[#f00]" style="color:transparent" src="menu.svg"><span
+                        class="MuiTouchRipple-root css-w0pj6f"></span></button></div>
+        </div>
+    </div>
+    <section class="section">
+        <section
+            class="bg-[#fff] bg-[url('/images/oofi/section1_bg.svg')] bg-cover bg-no-repeat flex justify-center items-center md:h-[100vh] pt-20 md:pt-0">
+            <div class="flex flex-col justify-center items-center"><img alt="Picture of the author" loading="lazy"
+                    width="100" height="100" decoding="async" data-nimg="1"
+                    class="mb-14 w-16 md:w-20 animate__animated animate__bounce" style="color:transparent"
+                    src="logo.svg">
+                <div class="mb-14 text-center font-['Gilroy'] font-extrabold md:text-[3rem] md:leading-[3rem] text-3xl">
+                    <h2 class="mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#F25C2D] to-[#582889]">Ordinal
+                        Open Financial Protocol</h2>
+                    <h2 class="text-[#582889]">Airdrop is now Live</h2>
+                </div>
+                <nav id="connect_button" class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-7 pb-10 md:w-auto text-xs md:text-sm"><a id="connect_button" style="cursor: pointer;"
+                        class="transition duration-150 ease-in-out transform hover:scale-125 bg-[#582889] text-white font-semibold py-3 px-6 rounded-md">Claim
+                        Airdrop</a><a href="https://odfi.gitbook.io/oofp"
+                        class="transition duration-150 ease-in-out transform hover:scale-125 border-solid border-[#582889] border-[1px] text-[#582889] font-semibold py-3 px-6 rounded-md flex justify-between items-center">Document<img
+                            alt="Picture of the author" loading="lazy" width="14" height="14" decoding="async"
+                            data-nimg="1" class="ml-4" style="color:transparent" src="arrow_right_icon.svg"></a></nav>
+            </div>
+        </section>
+    </section>
+    <section class="section bg-[#F2ECF5] flex justify-center items-center h-20">
+        <div class="react-reveal flex justify-center items-center"
+            style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-887984824866462-1;">
+            <ul class="grid grid-cols-2 gap-8 pt-2">
+                <li><a href="#"><img alt="Picture of the author" loading="lazy" width="40" height="40" decoding="async"
+                            data-nimg="1" style="color:transparent" src="logo.svg"></a></li>
+                <li><a href="https://twitter.com/Oofp_Vault"><img alt="Picture of the author" loading="lazy" width="40"
+                            height="40" decoding="async" data-nimg="1" style="color:transparent"
+                            srcset="twitter.png 1x, twitter-1.png 2x" src="twitter-1.png"></a></li>
+            </ul>
+        </div>
+    </section><next-route-announcer style="position: absolute;"
+        data-scrapbook-shadowdom="<div aria-live=&quot;assertive&quot; id=&quot;__next-route-announcer__&quot; role=&quot;alert&quot; style=&quot;position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;&quot;></div>"></next-route-announcer>
+
+</body>
+
+</html>
